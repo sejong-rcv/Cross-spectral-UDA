@@ -1,0 +1,39 @@
+model_params:
+  name: 'MF_stage2_model'
+  
+exp_params:
+  dataset: 'MFdataset'
+  root_dir : '' # your absolute direc tory
+  data_dir: './data/MFdataset/'
+  num_classes: 19 #cityscapes: 19, mfdataset: 9
+  input_size: '640, 480'
+  num_layers: 50
+
+init:
+  init_type: 'xavier'
+  init_gain: 0.02
+
+train_params:
+  batch_size: 8
+  max_epoch: 50 
+  num_workers: 16
+  power: 0.9
+  norm: 'BatchNorm'
+  gan: 'LS'
+
+  generator:
+    base_lr: 0.00005 
+  decoder:
+    base_lr: 0.00005
+
+test_params:
+  batch_size: 1
+  num_workers: 4
+
+logging_params:
+  log_dir: 'logs/'
+  save_dir: 'checkpoints'
+  tensorboard: True
+
+
+

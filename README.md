@@ -1,0 +1,73 @@
+## Prerequisites
+### Recommended Environment
+- OS: Ubuntu 18.04
+- CUDA: 11.6
+- Python 3.7
+- Pytorch 1.12.1 Torchvision 0.13.1
+- GPU: 2 NVIDIA GeForce RTX 3090 GPUs
+
+## Data Preparation
+### Downloading the Dataset
+- [MF Dataset](https://www.mi.t.u-tokyo.ac.jp/static/projects/mil_multispectral/)
+- [KP Dataset](https://github.com/yeong5366/MS-UDA?tab=readme-ov-file)
+     - MS-UDA manually annotated the [KAIST PD Dataset](https://soonminhwang.github.io/rgbt-ped-detection/) for the semantic segmentation task.
+         - 950 images with the same 19 class ground-truth labels as Cityscapes
+     - [CRM_Seg](https://sites.google.com/view/crm4rgbtseg/) divided 950 annotated images into 499, 140, and 311 for training, validation, and testing, respectively.
+         - We follow this setting for a fair comparison.
+         - Please refer ```./data/KPdataset/filenames_KP/CRM_split``` in our repository.
+### Data Folder Structure
+- Place the downloaded dataset and the '**CRM_split**' folder in the structure below.
+```
+data
+├── KPdataset
+│   ├── day2night
+│   │   ├── set00_V000_I00000_2N.png
+│   │   └── ...
+│   ├── filename_KP
+│   │   ├── CRM_split
+│   │   ├── 00001D.png
+│   │   └── ...
+│   ├── labels
+│   ├── pseudo_KP
+│   └── ...
+├── MFdataset
+│   ├── images
+│   │   ├── 00001D.png
+│   │   └── ...
+│   ├── labels
+│   │   ├── 00001D.png
+│   │   └── ...
+│   ├── pseudo_all
+│   ├── seperated_images
+│   │   ├── 00001D_rgb.png
+│   │   ├── 00001D_th.png
+│   │   └── ...
+│   ├── train.txt
+│   ├── test.txt
+│   └── ...
+├── datasets
+loss
+model
+```
+
+## Train
+- Modify the path of the config file in the .sh file. (MFdataset or KPdataset)
+```
+bash scripts/train_stage1.sh
+bash scripts/train_stage2.sh
+```
+## Test
+- Modify the path of the config file in the .sh file. (MFdataset or KPdataset)
+- Use ```--test_mode``` argument
+```
+bash scripts/eval_test.sh
+```
+
+### Checkpoints
+- MFdatsaet
+- [KPdataset](https://drive.google.com/drive/folders/1Uf4YeDjFB1eCtMv3BWcqOU_cgfRi1ozT?usp=drive_link)
+
+### References
+We referenced the repositories below for the code.
+- [MS-UDA](https://github.com/yeong5366/MS-UDA)
+- [HeatNet](https://github.com/jzuern/heatnet-pub)
