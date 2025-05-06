@@ -1,3 +1,15 @@
+## [ICRA 2025] Boosting Cross-spectral Unsupervised Domain Adaptation for Thermal Semantic Segmentation
+---
+<img src="_fig/overview.png" width="1280">
+
+> **Boosting Cross-spectral Unsupervised Domain Adaptation for Thermal Semantic Segmentation**<br>
+> Seokjun Kwon* (Sejong Univ.), Jeongmin Shin* (Sejong Univ.), Namil Kim (NAVER LABS), Soonmin Hwang (Hanyang Univ.), and Yukyung Choi† (Sejong Univ.)
+> 
+>
+> **Abstract:** *In autonomous driving, thermal image semantic segmentation has emerged as a critical research area, owing to its ability to provide robust scene understanding under adverse visual conditions. In particular, unsupervised domain adaptation (UDA) for thermal image segmentation can be an efficient solution to address the lack of labeled thermal datasets. Nevertheless, since these methods do not effectively utilize the complementary information between RGB and thermal images, they significantly decrease performance during domain adaptation. In this paper, we present a comprehensive study on cross-spectral UDA for thermal image semantic segmentation. We first propose a novel masked mutual learning strategy that promotes complementary information exchange by selectively transferring results between each spectral model while masking out uncertain regions. Additionally, we introduce a novel proto typical self-supervised loss designed to enhance the performance of the thermal segmentation model in nighttime scenarios. This approach addresses the limitations of RGB pre-trained networks, which cannot effectively transfer knowledge under low illumination due to the inherent constraints of RGB sensors. In experiments, our method achieves higher performance over previous UDA methods and comparable performance to state of-the-art supervised methods.*
+
+---
+
 ## Prerequisites
 ### Recommended Environment
 - OS: Ubuntu 18.04
