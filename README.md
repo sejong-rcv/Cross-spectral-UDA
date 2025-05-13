@@ -1,4 +1,7 @@
 ## [ICRA 2025] Boosting Cross-spectral Unsupervised Domain Adaptation for Thermal Semantic Segmentation
+
+Paper: [[arXiv]](https://arxiv.org/abs/2505.06951)
+
 ---
 <img src="_fig/overview.png" width="1280">
 
